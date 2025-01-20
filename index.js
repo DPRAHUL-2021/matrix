@@ -10,6 +10,9 @@ app.use(express.static('./public'));
 
 io.on('connection',(socket)=>{
     console.log("Socket Conneted",socket.id);
+    socket.on('binarystream',stream=>{
+        console.log("Binary Data Received");
+    })
 })
 
 server.listen(5678,(req,res)=>{console.log(`Server started running on PORT : 5678`)});
